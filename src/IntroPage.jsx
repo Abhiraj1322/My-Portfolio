@@ -2,8 +2,9 @@ import React from 'react'
 
 const IntroPage = () => {
   return (
+
     <div className="bg-darkGreen text-white p-4">
-       <img src="/public/WhatsApp Image 2025-02-08 at 12.27.35 AM.jpeg" alt=""  className='w-32 float-right mr-60 mt-10'/> 
+       <img src="/public/Profile-image.jpeg" alt="" className='w-32 float-right mr-60 mt-16'/> 
     <div className="m-20">
     
     <div>
@@ -20,7 +21,7 @@ const IntroPage = () => {
       <h2 >Pages</h2>
       </div>
       <hr className='border-t border-gray-700 my-4' />
-      <div className='flex flex-row justify-around'>
+      <div className='grid gap-4 md:grid-cols-2'>
         <div className='bg-gray-800 p-5 bg-opacity-25 m-5'>
         <a target="_self" className="" href="/blog"/>
         <h3 className="">Blog</h3>
@@ -32,9 +33,7 @@ const IntroPage = () => {
         <h3 className="">Blog</h3>
         <p>Here is my blog page</p>
         </div>
-        </div>
-      <div className='flex flex-row  justify-around'>
-      <div className='bg-gray-800 p-5 bg-opacity-25 m-5'>
+        <div className='bg-gray-800 p-5 bg-opacity-25 m-5'>
         <a target="_self" className="" href="/blog"/>
         <h3 className="">Blog</h3>
         <p>Here is my blog page</p>
@@ -44,9 +43,12 @@ const IntroPage = () => {
         <a target="_self" className="" href="/blog"/>
         <h3 className="">Blog</h3>
         <p>Here is my blog page</p>
+        </div>
         </div>
 
-      </div>
+     
+
+      
       
 
 
