@@ -29,7 +29,7 @@ const IntroPage = () => {
   return (
 
     <div className="bg-white text-black dark:bg-gray-900 dark:text-white p-4 rounded-md ">
-       <img src="/public/profile-image.jpeg" alt="" className='w-32 float-right mr-60 mt-16'/> 
+       <img src="/profile-image.jpeg" alt="" className='w-32 float-right mr-60 mt-16'/> 
     <div className="m-20">
     <button
   onClick={() => {
