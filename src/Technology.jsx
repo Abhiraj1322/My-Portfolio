@@ -1,55 +1,57 @@
 import React from 'react'
+import { useEffect,useState } from 'react'
 
 const Technology = () => {
-  return (
-    <div className='bg-darkGreen text-white p-4'>
-  <h2>Technology</h2>
-  <p>Backend</p>
-  <div className=''>
-    <ul>
-    <img className='w-6'   src="./public/node-js.svg" alt="Node-js" />
-      <li> Node Js</li>
-    </ul>
-  </div>
-  <div>
-  <img className='w-6' src="./public/php-svgrepo-com.svg" alt="Php" />
-  <p>Php</p>
-  </div>
-  <div>
-  <img className='w-6' src="./public/vite.svg" alt="vite" />
-  <p>Vite</p>
-  </div>
-  <div>
-  <img className='w-7' src="./public/express-svgrepo-com.svg" alt="vite" />
-  <p>Express</p>
-  </div>
-  <hr className='border-t border-gray-700 my-4' />
-  <div>
-      <p>Frontend</p>
-<div>
-  <div>
-  <img className='w-6'  src="./public/react-javascript-js-framework-facebook-svgrepo-com.svg" alt="React" />
-  <p>React</p>
-    </div>
+  const [data, setData] = useState([]);       // to store API data
+  const [loading, setLoading] = useState(true); // to show loading
+  const [error, setError] = useState(null);     // to handle errors
+  const[index,setindex]=useState(0)
+  useEffect(() => {
+    fetch('https://portfolio-admin-view.onrender.com/skills/api') // replace with your API URL
+      .then((response) => {
+        if (!response.ok) {
+          throw new Error('Something went wrong!');
+        }
+        return response.json();
+      })
+      .then((data) => {
+        setData(data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        setError(err.message);
+        setLoading(false);
+      });
+  }, []); // empty array means run only once when the component mounts
+
+  if (loading) return <p className=''>Loading...</p>;
+  if (error) return <p>Error: {error}</p>;
+
+
+  return(
     <div>
-    <img className='w-6' src="./public/java-script-logo-svgrepo-com.svg" alt="Javascript" />
-    <p>Javascript</p>
-    </div>
-    <div>
-    <img className='w-6' src="/public/tailwindcss-icon-svgrepo-com.svg" alt="Tailwind CSS" />
-    <p>Tailwind css</p>
-    </div>
+      <div className='bg-white text-black dark:bg-gray-900 dark:text-white p-4 rounded-md '>
 
+      <h1 className='ml-20 mt-7'>Skills</h1>
+      <hr className=' border-gray-700 my-1 ' />
+      {data.length > 0 ? (
+        <div className='grid grid-rows-3 grid-cols-2  gap-24 ml-20  bg-white text-black dark:bg-gray-900 dark:text-white p-4 rounded-md  '>
+          {data.map(skill => (
+            <div key={skill._id}>
+           <h1> {skill.name}   </h1>   
+             <p>{skill.level}</p> 
+            </div>
+          ))}
+        </div>
+      ) : (
+        <p>Loading...</p>
+      )}
 
-    <div>
+      </div>
 
     </div>
-
-</div>
-    </div>
-    </div>
-    
   )
+
 }
 
 export default Technology
