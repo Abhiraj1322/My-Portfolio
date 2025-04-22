@@ -29,14 +29,14 @@ const IntroPage = () => {
   return (
 
     <div className="bg-white text-black dark:bg-gray-900 dark:text-white p-4 rounded-md ">
-       <img src="/public/Profile-image.jpeg" alt="" className='w-32 float-right mr-60 mt-16'/> 
+       <img src="/public/profile-image.jpeg" alt="" className='w-32 float-right mr-60 mt-16'/> 
     <div className="m-20">
     <button
   onClick={() => {
     document.documentElement.classList.toggle('dark');
    
   }}
- className="p-2 bg-gray-200 dark:bg-gray-800 text-black dark:text-white rounded "
+ className="p-2 bg-gray-200 dark:bg-gray-800 text-black dark:text-white rounded flex- "
 >
   
   Toggle Dark Mode
