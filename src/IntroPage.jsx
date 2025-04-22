@@ -1,11 +1,13 @@
 import React from 'react'
 import { useEffect,useState } from 'react'
+import { MoonIcon, SunIcon } from '@heroicons/react/16/solid';
 const IntroPage = () => {
   const [data, setData] = useState([]);       // to store API data
     const [loading, setLoading] = useState(true); // to show loading
     const [error, setError] = useState(null);     // to handle errors
     const[index,setindex]=useState(0)
     const [isDark, setIsDark] = useState(false);
+    
    useEffect(() => {
       fetch('https://portfolio-admin-view.onrender.com/projects/api') // replace with your API URL
         .then((response) => {
@@ -36,10 +38,14 @@ const IntroPage = () => {
     document.documentElement.classList.toggle('dark');
    
   }}
- className="p-2 bg-gray-200 dark:bg-gray-800 text-black dark:text-white rounded flex- "
->
+ className="relative left-[94%] bottom-[72px]"
   
-  Toggle Dark Mode
+  >
+  {isDark ? (
+        <SunIcon className="w-6 h-6" />
+      ) : (
+        <MoonIcon className="w-6 h-6" />
+      )}
 </button>
     <div>
     <h1 className='text-2xl '>Abhiraj</h1>
