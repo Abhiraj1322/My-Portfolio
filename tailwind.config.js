@@ -8,6 +8,7 @@ export default {
         darkGreen: "#051b11",
         neonGreen: "#00ff99",
         gridLines: "rgba(0,255,0,0.1)",
+        poppins: ['Poppins', 'sans-serif'],
       },
     },
     

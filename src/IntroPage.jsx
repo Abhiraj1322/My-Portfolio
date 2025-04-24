@@ -1,6 +1,7 @@
 import React from 'react'
 import { useEffect,useState } from 'react'
 import { MoonIcon, SunIcon } from '@heroicons/react/16/solid';
+
 const IntroPage = () => {
   const [data, setData] = useState([]);       // to store API data
     const [loading, setLoading] = useState(true); // to show loading
@@ -30,7 +31,10 @@ const IntroPage = () => {
   
   return (
 
-    <div className="bg-white text-black dark:bg-gray-900 dark:text-white p-4 rounded-md ">
+    <div className="bg-white text-black dark:bg-gray-900 dark:text-white p-4 rounded-md  ">
+      <div className='relative top-11 left-[83px]'>
+      <img  src="./a-icon.png" alt="" className='w-10 transition delay-150 duration-300 ease-in-out hover:-translate-y-1 hover:scale-110  dark:text-white  ' />
+      </div>
        <img src="/profile-image.jpeg" alt="" className='w-32 float-right mr-60 mt-16'/> 
     <div className="m-20">
     <button
@@ -48,8 +52,8 @@ const IntroPage = () => {
       )}
 </button>
     <div>
-    <h1 className='text-2xl '>Abhiraj</h1>
-      <h2 className='text-xl'>full-stack devolper</h2>
+    <h1 className='text-2xl font-poppins '>Abhiraj</h1>
+      <h2 className='text-xl '>full-stack devolper</h2>
       <p className='text-green-300 underline'>i am full stack javascript Devolper</p>
       <p>React.js, Node Js ,Express & Tailwind CSS</p>
     </div>
